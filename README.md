@@ -20,8 +20,7 @@ Danach haben wir probiert den webserver hinzuzufügen was etwas länger gebrauch
 Als nächstes haben wir den chart hinzugefügt was am längest gedauert hat nachdem char.js, das Internet und die Kombination aus Javascript und c++ manchmal unverhersehbare fehler geliefert hat.
 
 ## Code
-```c++
-```
+Code ist im code Folder
 
 ## Schaltung
 
