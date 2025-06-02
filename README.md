@@ -12,13 +12,21 @@ Außerdem haben wir mithilfe der eingebauten RGB LED eine Status LED gemacht hab
 Die Funktion der Wetterstation haben wir mithilfe der Adafruit DHT library bekommen.
 Den Webserver haben wir mithilfe von der ESP32 Async Webserver library umgesetzt.
 Den Chart am Webserver haben wir mit chart.js gemacht.
-Die statusLEd haben wir mithilfe der Neopixel library gemacht
+Die StatusLED haben wir mithilfe der Neopixel library gemacht.
 
 ## Arbeitsschritt
 Angefangen haben wir mit der Wetterstation indem wir erstmal die Sensordaten auf dem Serial monitor angezeigt haben um zu sehen wie das funktioniert.
 Danach haben wir probiert den webserver hinzuzufügen was etwas länger gebraucht hat nachdem es ein paar probleme mit dem Internet gab
-Als nächstes haben wir den chart hinzugefügt was am längest gedauert hat nachdem
+Als nächstes haben wir den chart hinzugefügt was am längest gedauert hat nachdem char.js, das Internet und die Kombination aus Javascript und c++ manchmal unverhersehbare fehler geliefert hat.
+
+## Code
+```c++
+```
+
+## Schaltung
 
 ## Zusammenfassung
+Das projekt hat uns gezeigt wie man am ESP mit webservern, temperatur sensoren arbeitet und wie man die LED einzeln ansteuert.
 
 ## Quellen
+
