@@ -3,6 +3,7 @@
 #include <DHT.h>
 #include <DHT_U.h>
 #include <ESPAsyncWebServer.h>
+#include <Adafruit_NeoPixel.h>
 #include "index.h"
 
 #define DHTPIN 10
@@ -17,10 +18,12 @@ float temperature;
 float humidity;
 volatile bool updateStats;
 
-const char* ssid = "G55AB";
-const char* password = "Gast-L53";
+const char* ssid = "IOT";
+const char* password = "20tgmiot18";
 
 AsyncWebServer server(80);
+
+Adafruit_NeoPixel pixels(1, 8, NEO_GRB + NEO_KHZ800);
 
 String header;
 
@@ -39,11 +42,15 @@ void setup() {
   pinMode(SPEAKER, OUTPUT);
   Serial.begin(115200);
 
+  pixels.begin();
+
   dht.begin();
   timer = timerBegin(1000000);
   timerAttachInterrupt(timer, &onTimer);
   timerAlarm(timer, 10000000, true, 0);
 
+  pixels.setPixelColor(0, pixels.Color(255, 255, 255));
+  pixels.show();
   Serial.print("Connecting to ");
   Serial.print(ssid);
   Serial.print(" with password ");
@@ -54,6 +61,8 @@ void setup() {
     Serial.print(".");
   }
   Serial.println("\nWiFi connected.");
+  pixels.setPixelColor(0, pixels.Color(0, 255, 0));
+  pixels.show();
   Serial.print("IP: ");
   Serial.println(WiFi.localIP());
   server.on("/", HTTP_GET, [](AsyncWebServerRequest* request) {
@@ -78,6 +87,8 @@ void setup() {
 
 void loop() {
   if (updateStats) {
+    pixels.setPixelColor(0, pixels.Color(0, 0, 255));
+    pixels.show();
     if (speakerState) {
           tone(3, 440);
     }
@@ -94,5 +105,7 @@ void loop() {
     humidity = tempHumidity;
     updateStats = false;
     noTone(3);
+    pixels.setPixelColor(0, pixels.Color(0, 255, 0));
+    pixels.show();
   }
 }
