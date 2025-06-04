@@ -28,4 +28,6 @@ Code ist im code Folder
 Das projekt hat uns gezeigt wie man am ESP mit webservern, temperatur sensoren arbeitet und wie man die LED einzeln ansteuert.
 
 ## Quellen
-
+https://github.com/ESP32Async/ESPAsyncWebServer
+https://arduinogetstarted.com/tutorials/arduino-dht11
+https://www.w3schools.com/js/js_graphics_chartjs.asp
