@@ -23,7 +23,7 @@ Als nächstes haben wir den chart hinzugefügt was am längest gedauert hat nach
 Code ist im code Folder
 
 ## Schaltung
-
+![alt text](Unbenannt.png)
 ## Zusammenfassung
 Das projekt hat uns gezeigt wie man am ESP mit webservern, temperatur sensoren arbeitet und wie man die LED einzeln ansteuert.
 
